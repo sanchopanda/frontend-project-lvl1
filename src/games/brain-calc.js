@@ -1,4 +1,5 @@
-import readlineSync from 'readline-sync';
+import question from '../components/question.js';
+import wrongAnswer from '../components/wrongAnswer.js';
 
 const result = (i, a, b) => {
   const operators = ['+', '-', '*'];
@@ -17,15 +18,14 @@ const brainCalc = (name) => {
 
   const [operator, correctAnswer] = result(operatorIndex, firstNumber, secondNumber);
 
-  console.log(`Question: ${firstNumber} ${operator} ${secondNumber}`);
-  const answer = Number(readlineSync.question('Your answer '));
+  const questionSting = `${firstNumber} ${operator} ${secondNumber}`;
+  const answer = question(questionSting);
 
   if (answer === correctAnswer) {
     console.log('Correct!');
     return true;
   }
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  console.log(`Let's try again, ${name}!`);
+  wrongAnswer(answer, correctAnswer, name);
   return false;
 };
 

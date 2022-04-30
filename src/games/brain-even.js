@@ -1,19 +1,18 @@
-import readlineSync from 'readline-sync';
+import question from '../components/question.js';
+import wrongAnswer from '../components/wrongAnswer.js';
 
 const brainEven = (name) => {
   const RANDOM_COEFFICIENT = 100;
   const number = Math.floor(Math.random() * RANDOM_COEFFICIENT);
   const isEven = number % 2 === 0;
-  console.log(`Question: ${number}`);
-  const answer = readlineSync.question('Your answer ');
+  const answer = question(number);
 
   if ((isEven && answer === 'yes') || (!isEven && answer === 'no')) {
     console.log('Correct!');
     return true;
   }
   const correctAnswer = answer === 'yes' ? 'no' : 'yes';
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  console.log(`Let's try again, ${name}!`);
+  wrongAnswer(answer, correctAnswer, name);
   return false;
 };
 
