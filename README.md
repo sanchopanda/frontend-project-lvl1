@@ -6,9 +6,16 @@
 ![example workflow](https://github.com/sanchopanda/frontend-project-lvl1/actions/workflows/lint-check.yml/badge.svg)
 
 Brain-even:
+Необходимо ответить, является ли четным число
 
 [![asciicast](https://asciinema.org/a/MEYboK5wMqahjxxR6DsYmz1ma.svg)](https://asciinema.org/a/MEYboK5wMqahjxxR6DsYmz1ma)
 
 Brain-calc:
+Необходимо дать правильный результат выражения
 
 [![asciicast](https://asciinema.org/a/IrtTnAcJUU3wTjVqIn2Lnogdz.svg)](https://asciinema.org/a/IrtTnAcJUU3wTjVqIn2Lnogdz)
+
+Brain-gcd:
+Необходимо дать наибольший общий делитель для двух чисел
+
+[![asciicast](https://asciinema.org/a/lf9Q9tQhhAVAVlj8TYyYxFHB7.svg)](https://asciinema.org/a/lf9Q9tQhhAVAVlj8TYyYxFHB7)
