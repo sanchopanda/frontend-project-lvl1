@@ -5,4 +5,10 @@
 
 ![example workflow](https://github.com/sanchopanda/frontend-project-lvl1/actions/workflows/lint-check.yml/badge.svg)
 
+Brain-even:
+
 [![asciicast](https://asciinema.org/a/MEYboK5wMqahjxxR6DsYmz1ma.png)](https://asciinema.org/a/MEYboK5wMqahjxxR6DsYmz1ma)
+
+Brain-calc:
+
+[![asciicast](https://asciinema.org/a/IrtTnAcJUU3wTjVqIn2Lnogdz.svg)](https://asciinema.org/a/IrtTnAcJUU3wTjVqIn2Lnogdz)
