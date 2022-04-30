@@ -5,6 +5,8 @@ const brainProgression = (name, STEPS = 3) => {
   const NUMBER_COEFFICIENT = 15;
   const STEP_COEFFICIENT = 5;
 
+  console.log('What number is missing in the progression?');
+
   let counter = 0;
 
   while (counter < STEPS) {
