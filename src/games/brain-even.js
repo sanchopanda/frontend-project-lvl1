@@ -1,19 +1,22 @@
-import question from '../components/question.js';
-import wrongAnswer from '../components/wrongAnswer.js';
+import askQuestion from '../components/ask-question.js';
 
-const brainEven = (name) => {
+const brainEven = (name, STEPS = 3) => {
   const RANDOM_COEFFICIENT = 100;
-  const number = Math.floor(Math.random() * RANDOM_COEFFICIENT);
-  const isEven = number % 2 === 0;
-  const answer = question(number);
 
-  if ((isEven && answer === 'yes') || (!isEven && answer === 'no')) {
-    console.log('Correct!');
-    return true;
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+
+  let counter = 0;
+
+  while (counter < STEPS) {
+    const number = Math.floor(Math.random() * RANDOM_COEFFICIENT);
+    const correctAnswer = number % 2 === 0 ? 'yes' : 'no';
+
+    const questionSting = `${number}`;
+
+    const isValidAnswer = askQuestion(questionSting, correctAnswer, name);
+
+    counter = isValidAnswer ? counter + 1 : 0;
   }
-  const correctAnswer = answer === 'yes' ? 'no' : 'yes';
-  wrongAnswer(answer, correctAnswer, name);
-  return false;
 };
 
 export default brainEven;

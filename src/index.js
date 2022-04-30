@@ -6,16 +6,8 @@ const gameConstructor = (game) => {
   const name = readlineSync.question('May I have your name? ');
 
   console.log(`Hello, ${name}`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
-  const REQUIRES = 3;
-
-  let counter = 0;
-
-  while (counter < REQUIRES) {
-    const result = game(name);
-    counter = result ? counter + 1 : 0;
-  }
+  game(name);
 
   console.log(`Congratulations, ${name}!`);
 };

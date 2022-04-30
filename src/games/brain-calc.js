@@ -1,32 +1,33 @@
-import question from '../components/question.js';
-import wrongAnswer from '../components/wrongAnswer.js';
+import askQuestion from '../components/ask-question.js';
 
 const result = (i, a, b) => {
   const operators = ['+', '-', '*'];
   const results = [a + b, a - b, a * b];
 
-  return [operators[i], results[i]];
+  return [operators[i], String(results[i])];
 };
 
-const brainCalc = (name) => {
+const brainCalc = (name, STEPS = 3) => {
   const OPERATOR_COEFFICIENT = 3;
   const NUMBER_COEFFICIENT = 10;
 
-  const operatorIndex = Math.floor(Math.random() * OPERATOR_COEFFICIENT);
-  const firstNumber = Math.floor(Math.random() * NUMBER_COEFFICIENT);
-  const secondNumber = Math.floor(Math.random() * NUMBER_COEFFICIENT);
+  console.log('What is the result of the expression?');
 
-  const [operator, correctAnswer] = result(operatorIndex, firstNumber, secondNumber);
+  let counter = 0;
 
-  const questionSting = `${firstNumber} ${operator} ${secondNumber}`;
-  const answer = question(questionSting);
+  while (counter < STEPS) {
+    const operatorIndex = Math.floor(Math.random() * OPERATOR_COEFFICIENT);
+    const firstNumber = Math.floor(Math.random() * NUMBER_COEFFICIENT);
+    const secondNumber = Math.floor(Math.random() * NUMBER_COEFFICIENT);
 
-  if (answer === correctAnswer) {
-    console.log('Correct!');
-    return true;
+    const [operator, correctAnswer] = result(operatorIndex, firstNumber, secondNumber);
+
+    const questionSting = `${firstNumber} ${operator} ${secondNumber}`;
+
+    const isValidAnswer = askQuestion(questionSting, correctAnswer, name);
+
+    counter = isValidAnswer ? counter + 1 : 0;
   }
-  wrongAnswer(answer, correctAnswer, name);
-  return false;
 };
 
 export default brainCalc;
