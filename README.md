@@ -19,3 +19,8 @@ Brain-gcd:
 Необходимо дать наибольший общий делитель для двух чисел
 
 [![asciicast](https://asciinema.org/a/lf9Q9tQhhAVAVlj8TYyYxFHB7.svg)](https://asciinema.org/a/lf9Q9tQhhAVAVlj8TYyYxFHB7)
+
+Brain-progression:
+Необходимо найти недостающий элемент арифмитеческой прогресии
+
+[![asciicast](https://asciinema.org/a/McF2e65lBNCjywniuDqtgv5Te.svg)](https://asciinema.org/a/McF2e65lBNCjywniuDqtgv5Te)

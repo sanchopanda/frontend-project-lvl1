@@ -1,4 +1,5 @@
 import askQuestion from '../components/ask-question.js';
+import getRandomInt from '../components/getRandomInt.js';
 
 const result = (i, a, b) => {
   const operators = ['+', '-', '*'];
@@ -16,9 +17,9 @@ const brainCalc = (name, STEPS = 3) => {
   let counter = 0;
 
   while (counter < STEPS) {
-    const operatorIndex = Math.floor(Math.random() * OPERATOR_COEFFICIENT);
-    const firstNumber = Math.floor(Math.random() * NUMBER_COEFFICIENT);
-    const secondNumber = Math.floor(Math.random() * NUMBER_COEFFICIENT);
+    const operatorIndex = getRandomInt(0, OPERATOR_COEFFICIENT);
+    const firstNumber = getRandomInt(0, NUMBER_COEFFICIENT);
+    const secondNumber = getRandomInt(0, NUMBER_COEFFICIENT);
 
     const [operator, correctAnswer] = result(operatorIndex, firstNumber, secondNumber);
 

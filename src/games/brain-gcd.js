@@ -1,4 +1,5 @@
 import askQuestion from '../components/ask-question.js';
+import getRandomInt from '../components/getRandomInt.js';
 
 const findGCD = (a, b) => {
   if (b) {
@@ -15,8 +16,8 @@ const brainGcd = (name, STEPS = 3) => {
   let counter = 0;
 
   while (counter < STEPS) {
-    const firstNumber = Math.floor(Math.random() * NUMBER_COEFFICIENT);
-    const secondNumber = Math.floor(Math.random() * NUMBER_COEFFICIENT);
+    const firstNumber = getRandomInt(0, NUMBER_COEFFICIENT);
+    const secondNumber = getRandomInt(0, NUMBER_COEFFICIENT);
 
     const correctAnswer = findGCD(firstNumber, secondNumber);
 

@@ -1,4 +1,5 @@
 import askQuestion from '../components/ask-question.js';
+import getRandomInt from '../components/getRandomInt.js';
 
 const brainEven = (name, STEPS = 3) => {
   const RANDOM_COEFFICIENT = 100;
@@ -8,7 +9,7 @@ const brainEven = (name, STEPS = 3) => {
   let counter = 0;
 
   while (counter < STEPS) {
-    const number = Math.floor(Math.random() * RANDOM_COEFFICIENT);
+    const number = getRandomInt(0, RANDOM_COEFFICIENT);
     const correctAnswer = number % 2 === 0 ? 'yes' : 'no';
 
     const questionSting = `${number}`;
