@@ -21,7 +21,7 @@ const brainGcd = (STEPS = 3) => {
 
     const correctAnswer = findGCD(firstNumber, secondNumber);
 
-    const questionSting = `${firstNumber}  ${secondNumber}`;
+    const questionSting = `${firstNumber} ${secondNumber}`;
 
     const isValidAnswer = askQuestion(questionSting, correctAnswer);
 
