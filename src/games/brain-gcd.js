@@ -8,7 +8,7 @@ const findGCD = (a, b) => {
   return String(a);
 };
 
-const brainGcd = (name, STEPS = 3) => {
+const brainGcd = (STEPS = 3) => {
   const NUMBER_COEFFICIENT = 100;
 
   console.log('Find the greatest common divisor of given numbers.');
@@ -23,10 +23,14 @@ const brainGcd = (name, STEPS = 3) => {
 
     const questionSting = `${firstNumber}  ${secondNumber}`;
 
-    const isValidAnswer = askQuestion(questionSting, correctAnswer, name);
+    const isValidAnswer = askQuestion(questionSting, correctAnswer);
 
-    counter = isValidAnswer ? counter + 1 : 0;
+    if (!isValidAnswer) return false;
+
+    counter += 1;
   }
+
+  return true;
 };
 
 export default brainGcd;

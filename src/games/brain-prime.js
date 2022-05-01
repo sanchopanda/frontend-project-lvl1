@@ -10,7 +10,7 @@ const isPrime = (num) => {
   return num > 1 ? 'yes' : 'no';
 };
 
-const brainPrime = (name, STEPS = 3) => {
+const brainPrime = (STEPS = 3) => {
   const NUMBER_COEFFICIENT = 100;
 
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
@@ -22,10 +22,14 @@ const brainPrime = (name, STEPS = 3) => {
 
     const correctAnswer = isPrime(number);
 
-    const isValidAnswer = askQuestion(number, correctAnswer, name);
+    const isValidAnswer = askQuestion(number, correctAnswer);
 
-    counter = isValidAnswer ? counter + 1 : 0;
+    if (!isValidAnswer) return false;
+
+    counter += 1;
   }
+
+  return true;
 };
 
 export default brainPrime;

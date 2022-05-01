@@ -1,7 +1,7 @@
 import askQuestion from '../components/ask-question.js';
 import getRandomInt from '../components/getRandomInt.js';
 
-const brainEven = (name, STEPS = 3) => {
+const brainEven = (STEPS = 3) => {
   const RANDOM_COEFFICIENT = 100;
 
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
@@ -14,10 +14,14 @@ const brainEven = (name, STEPS = 3) => {
 
     const questionSting = `${number}`;
 
-    const isValidAnswer = askQuestion(questionSting, correctAnswer, name);
+    const isValidAnswer = askQuestion(questionSting, correctAnswer);
 
-    counter = isValidAnswer ? counter + 1 : 0;
+    if (!isValidAnswer) return false;
+
+    counter += 1;
   }
+
+  return true;
 };
 
 export default brainEven;

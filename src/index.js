@@ -7,9 +7,13 @@ const gameConstructor = (game) => {
 
   console.log(`Hello, ${name}`);
 
-  game(name);
+  const result = game();
 
-  console.log(`Congratulations, ${name}!`);
+  if (result) {
+    console.log(`Congratulations, ${name}!`);
+  } else {
+    console.log(`Let's try again, ${name}!`);
+  }
 };
 
 export default gameConstructor;

@@ -8,7 +8,7 @@ const result = (i, a, b) => {
   return [operators[i], String(results[i])];
 };
 
-const brainCalc = (name, STEPS = 3) => {
+const brainCalc = (STEPS = 3) => {
   const OPERATOR_COEFFICIENT = 3;
   const NUMBER_COEFFICIENT = 10;
 
@@ -25,10 +25,14 @@ const brainCalc = (name, STEPS = 3) => {
 
     const questionSting = `${firstNumber} ${operator} ${secondNumber}`;
 
-    const isValidAnswer = askQuestion(questionSting, correctAnswer, name);
+    const isValidAnswer = askQuestion(questionSting, correctAnswer);
 
-    counter = isValidAnswer ? counter + 1 : 0;
+    if (!isValidAnswer) return false;
+
+    counter += 1;
   }
+
+  return true;
 };
 
 export default brainCalc;
