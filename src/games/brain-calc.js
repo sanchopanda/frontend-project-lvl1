@@ -5,6 +5,8 @@ const result = (i, a, b) => {
   const operators = ['+', '-', '*'];
   const results = [a + b, a - b, a * b];
 
+  console.log(i, a, b, operators, results)
+
   return [operators[i], String(results[i])];
 };
 
