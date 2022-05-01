@@ -5,13 +5,11 @@ const result = (i, a, b) => {
   const operators = ['+', '-', '*'];
   const results = [a + b, a - b, a * b];
 
-  console.log(i, a, b, operators, results)
-
   return [operators[i], String(results[i])];
 };
 
 const brainCalc = (STEPS = 3) => {
-  const OPERATOR_COEFFICIENT = 3;
+  const OPERATOR_COEFFICIENT = 2;
   const NUMBER_COEFFICIENT = 10;
 
   console.log('What is the result of the expression?');
