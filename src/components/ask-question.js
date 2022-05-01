@@ -4,6 +4,8 @@ const askQuestion = (questionString, correctAnswer, name) => {
   console.log(`Question: ${questionString}`);
   const answer = readlineSync.question('Your answer: ');
 
+  console.log(answer, correctAnswer, answer === correctAnswer)
+
   if (answer === correctAnswer) {
     console.log('Correct!');
     return true;
