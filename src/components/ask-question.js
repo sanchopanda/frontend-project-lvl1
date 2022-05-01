@@ -9,7 +9,6 @@ const askQuestion = (questionString, correctAnswer, name) => {
     return true;
   }
   console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  console.log(`Let's try again, ${name}!`);
   return false;
 };
 
